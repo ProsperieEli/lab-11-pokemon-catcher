@@ -1,22 +1,21 @@
-import { getRandomPokemon } from "./utils.js";
-import { encounteredPokemon, catchPokemon, setPokedex } from "./poke-times.js";
-//import { findById } from "./id.js";
+import { getRandomPokemon, renderPokemon } from "./utils.js";
+import { encounteredPokemon, catchPokemon, setPokedex, getPokedex } from "./poke-times.js";
+import { findById } from "./poke-times.js";
 // import functions and grab DOM elements
 
 
-const userChoice = document.getElementById('choice1');
-const userChoice2 = document.getElementById('choice2');
-const userChoice3 = document.getElementById('choice3');
+
 const userButton = document.getElementById('button');
+
+
 // initialize global state
 
-const pokemonArray = getRandomPokemon(); 
 
-//console.log(pokemonArray);
 
+renderPokemon();
 
 userButton.addEventListener('click', () => {
-
+    let trainer = document.querySelector('input:checked');
 });
 // set event listeners 
   // get user input
