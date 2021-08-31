@@ -51,7 +51,7 @@ getRandomPokemon()
 
 
 setPokedex()
-    -takes in a pokedex, stringifys, puts in loca storag
+    -takes in a pokedex, stringifys, puts in local storage
 getPokedex()
     -retrieves and parses the pokedex in local storage
 encounteredPokemon(id)

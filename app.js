@@ -1,4 +1,6 @@
 import { getRandomPokemon } from "./utils.js";
+import { encounteredPokemon, catchPokemon, setPokedex } from "./poke-times.js";
+//import { findById } from "./id.js";
 // import functions and grab DOM elements
 
 
@@ -7,6 +9,10 @@ const userChoice2 = document.getElementById('choice2');
 const userChoice3 = document.getElementById('choice3');
 const userButton = document.getElementById('button');
 // initialize global state
+
+const pokemonArray = getRandomPokemon(); 
+
+//console.log(pokemonArray);
 
 
 userButton.addEventListener('click', () => {
