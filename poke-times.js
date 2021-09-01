@@ -1,11 +1,14 @@
+import data from './data.js';
+
 const POKEDEX = 'pokedex';
 export function encounteredPokemon(id) {
     const encounterArray = getPokedex();
     const lastSeen = findById(encounterArray, id);
+    const pokeName = findById(data, id);
     if (lastSeen) {
         lastSeen.seen++;
     } else {
-        const pokemonObject = { id: id, seen: 1, caught: 0 };
+        const pokemonObject = { id: id, seen: 1, caught: 0, name: pokeName.pokemon };
         encounterArray.push(pokemonObject);
     }
     setPokedex(encounterArray);
@@ -15,9 +18,9 @@ export function encounteredPokemon(id) {
 
 export function catchPokemon(id) {
     const catchArray = getPokedex();
-    console.log(catchArray);
+   
     const lastCaught = findById(catchArray, id);
-    console.log(lastCaught, id);
+  
     lastCaught.caught++;
     
     setPokedex(catchArray);

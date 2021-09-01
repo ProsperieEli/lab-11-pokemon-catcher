@@ -9,17 +9,20 @@ const userButton = document.getElementById('button');
 
 
 // initialize global state
-
+let turns = 0;
 
 
 renderPokemon();
 
 userButton.addEventListener('click', () => {
     let trainer = document.querySelector('input:checked');
-    
+    turns++;
     catchPokemon(trainer.value);
     renderPokemon();
-    trainer.value === 0;
+   
+    if (turns === 10) {
+        window.location = './Results/results.html';
+    }
     
 });
 // set event listeners 

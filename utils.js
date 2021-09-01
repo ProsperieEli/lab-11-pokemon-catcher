@@ -39,17 +39,18 @@ export function renderPokemon() {
 
     userImg.src = pokeRandom[0].url_image;
     firstChoice.value = pokeRandom[0].id;
+    firstChoice.checked = false;
 
     encounteredPokemon(pokeRandom[0].id);
 
     secondChoice.value = pokeRandom[1].id;
     userImg2.src = pokeRandom[1].url_image;
-
+    secondChoice.checked = false;
     encounteredPokemon(pokeRandom[1].id);
 
     thirdChoice.value = pokeRandom[2].id;
     userImg3.src = pokeRandom[2].url_image;
-
+    thirdChoice.checked = false;
     encounteredPokemon(pokeRandom[2].id);
 
     
