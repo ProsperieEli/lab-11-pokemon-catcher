@@ -1,5 +1,6 @@
 import data from "./data.js";
 import { findById } from "./poke-times.js";
+import { encounteredPokemon } from "./poke-times.js";
 
 export function getRandomPokemon(){
     
@@ -39,13 +40,17 @@ export function renderPokemon() {
     userImg.src = pokeRandom[0].url_image;
     firstChoice.value = pokeRandom[0].id;
 
+    encounteredPokemon(pokeRandom[0].id);
+
     secondChoice.value = pokeRandom[1].id;
     userImg2.src = pokeRandom[1].url_image;
+
+    encounteredPokemon(pokeRandom[1].id);
 
     thirdChoice.value = pokeRandom[2].id;
     userImg3.src = pokeRandom[2].url_image;
 
-    
+    encounteredPokemon(pokeRandom[2].id);
 
     
 }

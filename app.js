@@ -16,6 +16,11 @@ renderPokemon();
 
 userButton.addEventListener('click', () => {
     let trainer = document.querySelector('input:checked');
+    
+    catchPokemon(trainer.value);
+    renderPokemon();
+    trainer.value === 0;
+    
 });
 // set event listeners 
   // get user input

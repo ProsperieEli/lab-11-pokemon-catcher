@@ -1,12 +1,4 @@
-export function getPokedex() {
-    const dataDex = localStorage.getItem('pokedex');
-    if (!dataDex) {
-        return [];
-    }
-    const parseDex = JSON.parse(dataDex);
-    return parseDex;
-}
-
+const POKEDEX = 'pokedex';
 export function encounteredPokemon(id) {
     const encounterArray = getPokedex();
     const lastSeen = findById(encounterArray, id);
@@ -18,26 +10,37 @@ export function encounteredPokemon(id) {
     }
     setPokedex(encounterArray);
     
-
+    
 }
 
 export function catchPokemon(id) {
     const catchArray = getPokedex();
+    console.log(catchArray);
     const lastCaught = findById(catchArray, id);
+    console.log(lastCaught, id);
     lastCaught.caught++;
-
+    
     setPokedex(catchArray);
 }
-    
+
 
 export function setPokedex(pokedex) {
-    const stringObject = JSON.stringify(pokedex);
-    localStorage.setItem(stringObject, pokedex);
+    const stringArray = JSON.stringify(pokedex);
+    localStorage.setItem(POKEDEX, stringArray);
 }
+export function getPokedex() {
+    const dataDex = localStorage.getItem(POKEDEX);
+    if (!dataDex) {
+        return [];
+    }
+    const parseDex = JSON.parse(dataDex);
+    return parseDex;
+}
+
 export function findById(data, id) {
 
     for (let poke of data) {
-        if (poke.id === id) {
+        if (poke.id === Number(id)) {
             return poke;
         }
     }
